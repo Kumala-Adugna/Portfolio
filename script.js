@@ -1,5 +1,8 @@
-// Wait for all HTML elements to securely mount in the browser DOM
 document.addEventListener("DOMContentLoaded", () => {
+    
+    // elements needed for mobile menu interactions
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-links");
     
     // ==========================================
     // 1. SMOOTH SCROLLING INTERPOLATION LOGIC
@@ -24,6 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 // SAFETY CHECK: Only intercept and scroll if the target element exists in your HTML
                 if (targetSection) {
                     event.preventDefault(); // Halt instant browser jump cuts
+                    
+                    // [UPDATED FOR MOBILE UX] Auto-close the mobile side drawer when a link is clicked
+                    if (hamburger && navMenu) {
+                        hamburger.classList.remove("active");
+                        navMenu.classList.remove("active");
+                    }
                     
                     targetSection.scrollIntoView({
                         behavior: "smooth",
@@ -77,4 +86,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     typeEffect();
+
+    // ==========================================
+    // [NEW] 3. MOBILE HAMBURGER MENU ENGINE
+    // ==========================================
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            // Toggles the 'X' animation effect on the bars
+            hamburger.classList.toggle("active");
+            // Toggles the slide-in visibility of the mobile links menu drawer
+            navMenu.classList.toggle("active");
+        });
+    }
+
+    // ==========================================
+    // DYNAMIC SKILL BARS PERCENTAGE INJECTOR
+    // ==========================================
+    const skillItems = document.querySelectorAll('.skill-bar-item');
+    
+    skillItems.forEach(item => {
+        const fillElement = item.querySelector('.bar-fill');
+        const percentageText = item.querySelector('.bar-percentage');
+        
+        if (fillElement && percentageText) {
+            // Automatically grab the width style (e.g., "85%") and set it as text
+            const widthValue = fillElement.style.width;
+            percentageText.textContent = widthValue;
+        }
+    });
 });
