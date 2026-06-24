@@ -79,6 +79,27 @@ body {
 .nav-links a:hover {
     color: #38bdf8;
 }
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #f8fafc;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 /* --- HERO INTRO SECTION --- */
 .hero-section {
     min-height: 100vh;
@@ -631,12 +652,68 @@ body {
     text-align: center;
 }
 
-/* --- SCREEN RESPONSIVENESS ADJUSTMENTS --- */
+/* ==========================================================================
+    SCREEN RESPONSIVENESS ADJUSTMENTS
+   ========================================================================== */
 @media (max-width: 768px) {
     .main-title { font-size: 44px; }
     .sub-title { font-size: 32px; }
-    .nav-links { display: none; } 
     .section-container { padding: 80px 20px; }
+    
+    .skills-progress-wrapper {
+        grid-template-columns: 1fr; /* Stacks your bars vertically on smaller mobile phone views */
+        gap: 28px;
+        margin-top: 50px;
+    }
+
+    /* Displays hamburger lines on mobile viewports */
+    .hamburger {
+        display: flex; 
+    }
+
+    /* Morphing 3 lines into an 'X' close graphic when active */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: #38bdf8;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: #38bdf8;
+    }
+
+    /* Transforms navigation layout into an animated slide-out menu drawer */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden off-screen by default */
+        width: 75%;
+        height: 100vh;
+        background-color: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(16px);
+        border-left: 1px solid rgba(51, 65, 85, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+    }
+
+    /* Triggers the sliding drawer entry */
+    .nav-links.active {
+        right: 0; 
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
     
     /* Collapses the split layout into a regular top-to-bottom card row for mobile layouts */
     .contact-wrapper {
