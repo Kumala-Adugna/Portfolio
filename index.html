@@ -12,18 +12,25 @@
 <body>
     
     <header class="header-class">
-        <nav class="nav">
-            <div class="logo">
-                <h2>Kumala<span>.</span></h2>
-            </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a> 
-                <a href="#skills">Skills</a> 
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a> 
-            </div> 
-        </nav>
+       <nav class="nav">
+         <div class="logo">
+           <h2>Kumala<span>.</span></h2>
+         </div>
+    
+         <button class="hamburger" aria-label="Toggle Menu">
+             <span class="bar"></span>
+             <span class="bar"></span>
+             <span class="bar"></span>
+         </button>
+
+         <div class="nav-links">
+             <a href="#home">Home</a>
+             <a href="#about">About</a> 
+             <a href="#skills">Skills</a> 
+             <a href="#projects">Projects</a>
+             <a href="#contact">Contact</a> 
+         </div> 
+       </nav>
     </header>
 
     <section id="home" class="hero-section">
@@ -32,9 +39,8 @@
                 <p class="subtitle">Hi, my name is</p>
                 <h1 class="main-title">Kumala Adugna.</h1>
                 <h2 class="sub-title">I'm a <span id="typewriter-text"></span><span class="cursor">|</span></h2>
-                <!-- <h2 class="sub-title">Full-Stack Developer & CSE Student.</h2> -->
                 <p class="description">
-                    I study Computer Science & Engineering at ASTU,  building frontend user experiences, structured backend logic, and robust database architectures.
+                    I study Computer Science & Engineering at ASTU, building frontend user experiences, structured backend logic, and robust database architectures.
                 </p>
                 <a href="#projects" class="cta-button">View My Work</a>
             </div>
@@ -49,17 +55,56 @@
         <div class="section-container">
             <h2 class="section-heading">About Me<span>.</span></h2>
             <p class="about-text">
-                I am deeply passionate about modern web technologies and software engineering. As a CSE student, I don't just build layouts ;I focus on writing clean code, solving logical problems, and understanding how data moves efficiently between the user interface and the database layer.
+                I am deeply passionate about modern web technologies and software engineering. As a CSE student, I don't just build layouts; I focus on writing clean code, solving logical problems, and understanding how data moves efficiently between the user interface and the database layer.
             </p>
         </div>
     </section>
 
-<section id="skills" class="skills-section">
+    <section id="skills" class="skills-section">
         <div class="section-container">
             <h2 class="section-heading">My Tech Stack<span>.</span></h2>
             <p class="section-subtext">Technologies and tools I work with across the full stack:</p>
             
             <div class="skills-grid">
+                
+                <div class="skill-card specialized-card">
+                    <span class="program-tag">EthioCoder</span>
+                    <h3>Programming Fundamentals</h3>
+                    <p>Verified Udacity credential covering foundational computational logic, clean coding practices, and core algorithmic problem-solving paradigms using Python.</p>
+                    <div class="badge-container" style="margin-bottom: 25px;">
+                        <span class="badge">Python</span>
+                        <span class="badge">Problem Solving</span>
+                        <span class="badge">Logic Architecture</span>
+                        <span class="badge">Version Control</span>
+                    </div>
+                    <a href="https://www.udacity.com/certificate/e/7bf647f2-4a68-11ef-99f4-43428aed49b6" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="project-link-btn" 
+                       style="display: inline-flex; align-items: center; gap: 8px;">
+                        Verify Credential ↗
+                    </a>
+                </div>
+
+                <div class="skill-card specialized-card">
+                    <span class="program-tag">EthioCoder</span>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Specialized track covering core AI concepts, data classification patterns, foundational machine learning workflows, and intelligent software systems.</p>
+                    <div class="badge-container" style="margin-bottom: 25px;">
+                        <span class="badge">AI Concepts</span>
+                        <span class="badge">Machine Learning Basics</span>
+                        <span class="badge">Data Workflows</span>
+                        <span class="badge">Python Foundations</span>
+                    </div>
+                    <a href="https://www.udacity.com/certificate/e/e5a5c6ba-4ef7-11f1-81fa-cf50d2c24ecd" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="project-link-btn" 
+                       style="display: inline-flex; align-items: center; gap: 8px;">
+                        Verify Credential ↗
+                    </a>
+                </div>
+
                 <div class="skill-card">
                     <h3>Frontend</h3>
                     <p>Crafting responsive, clean layouts and dynamic interactive interfaces.</p>
@@ -89,7 +134,8 @@
                         <span class="badge">Linux (Ubuntu)</span>
                     </div>
                 </div>
-            </div>
+
+            </div> 
 
             <div class="skills-progress-wrapper">
                 
@@ -205,6 +251,7 @@
                         <a href="https://github.com/Kumala-Adugna/Employee-Management-Systemlast" target="_blank" class="project-link-btn">View Code on GitHub</a>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-content">
                         <span class="project-category">Web Development</span>
@@ -223,6 +270,7 @@
                         <a href="https://kumala-adugna.github.io/AEC_DEV/Todo/" target="_blank" class="project-link-btn">Live Demo</a>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-content">
                         <span class="project-category">Front-End Development</span>
@@ -238,7 +286,6 @@
                     </div>
                     <div class="project-links-container">
                         <a href="https://github.com/Kumala-Adugna/AEC_DEV/tree/main/koinonia-fellowship" target="_blank" class="project-link-btn">View Github</a>
-    
                         <a href="https://kumala-adugna.github.io/AEC_DEV/koinonia-fellowship/" target="_blank" class="project-link-btn">Live Demo</a>
                     </div>
                 </div>
@@ -258,7 +305,7 @@
                         I'm open to discussing full-stack web development projects, database configurations, or core software engineering workflows. Drop a message or reach out directly!
                     </p>
                     
-                    <a href="mailto:kumala.adugna@astu.edu.et" class="email-direct-btn">
+                    <a href="mailto:kumala.adugna@astust.edu.et" class="email-direct-btn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         Say Hello via Email
                     </a>
@@ -270,7 +317,7 @@
                         <a href="https://linkedin.com/in/Kumala Adugna" target="_blank" aria-label="LinkedIn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         </a>
-                        <a href="https://t.me/@AlmightyGod14all" target="_blank" aria-label="Telegram">
+                        <a href="https://t.me/AlmightyGod14all" target="_blank" aria-label="Telegram">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-svg"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
                         </a>
                         <a href="https://x.com/yourusername" target="_blank" aria-label="X (Twitter)">
@@ -280,7 +327,7 @@
                 </div>
 
                 <div class="contact-form-column">
-                    <form action="https://formspree.io/f/your_form_id" method="POST" class="feedback-form">
+                    <form action="https://formspree.io/f/mnjkljpa" method="POST" class="feedback-form">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Chala" required>
@@ -303,6 +350,7 @@
             </div>
            </div>
     </section>
+    
     <script src="script.js"></script>
 </body>
 </html>
